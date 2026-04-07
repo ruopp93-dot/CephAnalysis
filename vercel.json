@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "name": "cephanalysis-landing",
+  "buildCommand": null,
+  "outputDirectory": "public",
+  "routes": [
+    { "src": "/docs/oferta", "dest": "/docs/oferta.html" },
+    { "src": "/docs/privacy", "dest": "/docs/privacy.html" },
+    { "src": "/docs/agreement", "dest": "/docs/agreement.html" },
+    { "src": "/docs/nda", "dest": "/docs/nda.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}
